@@ -56,3 +56,32 @@ export async function connectToDatabase() {
 
   return cached.conn;
 }
+
+/**connectToDatabase()
+        │
+        ▼
+Already connected?
+        │
+   Yes ─────► Return existing connection
+        │
+        No
+        ▼
+Connection in progress?
+        │
+   Yes ─────► Wait for that promise
+        │
+        No
+        ▼
+Start new connection
+        │
+        ▼
+Save promise
+        │
+        ▼
+Wait for connection
+        │
+        ▼
+Save connection
+        │
+        ▼
+Return connection */
